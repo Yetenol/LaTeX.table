@@ -1,9 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{sty/table}
 
-\RequirePackage{tabularx} % Distribute table columns equally
+\RequirePackage{tabularx}   % Provide {tabularx} to evenly spaced columns
 
-% define equally distributed column widths
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+% Align the text in an evenly spaced columns
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}  % left-aligned column
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}   % right-aligned column
+\newcolumntype{C}{>{\centering\arraybackslash}X}    % center-aligned column
