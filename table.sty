@@ -2,9 +2,23 @@
 \ProvidesPackage{sty/table}
 
 \RequirePackage{tabularx}   % Provide {tabularx} to evenly spaced columns
-
+\RequirePackage{booktabs}   % Standardized horizontal lines in tables
+\RequirePackage{pgfplotstable}   %  Generate tabulars from raw data
 
 % Align the text in an evenly spaced columns
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}  % left-aligned column
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}   % right-aligned column
 \newcolumntype{C}{>{\centering\arraybackslash}X}    % center-aligned column
+
+% default PgfplotsTable layout
+\pgfplotstableset{
+    every head row/.style = {
+        before row = \toprule, 
+        after row = \midrule
+    },
+    every last row/.style = {
+        after row = \bottomrule
+    },
+    col sep = comma, 
+    header = true
+}
