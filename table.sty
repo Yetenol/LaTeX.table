@@ -5,12 +5,15 @@
 \RequirePackage{booktabs}   % Standardized horizontal lines in tables
 \RequirePackage{pgfplotstable}   %  Generate tabulars from raw data
 
-% Align the text in an evenly spaced columns
+% Provide columntypes to align the text in an evenly spaced columns
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}  % left-aligned column
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}   % right-aligned column
 \newcolumntype{C}{>{\centering\arraybackslash}X}    % center-aligned column
 
-% default PgfplotsTable layout
+% Apply default PgfplotsTable layout
+\pgfplotsset{
+    compat = newest % don't run in backwards compatibility mode
+}
 \pgfplotstableset{
     every head row/.style = {
         before row = \toprule, 
